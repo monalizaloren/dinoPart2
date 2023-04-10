@@ -132,6 +132,61 @@ function draw() {
     }
   }
   
+function spawnClouds() {
+  if (frameCount % 60 === 0) {
+    /*Faça o seguinte abaixo:
+    1. Crie um sprite para a nuvem
+    2.defina o eixo y da nuvem
+    3.Adicione uma imagem 
+    4.Defina o tamanho
+    5.Defina a velocidade no eixo X*/
+    var cloud = ???(width+20,height-300,40,10);
+    ??? = Math.round(random(100,220));
+    ???(cloudImage);
+    ??? = 0.5;
+    ???= -3;
+    
+    //Defina o tempo de vida para 300
+   //???
+    
+  
+    cloud.depth = trex.depth;
+    trex.depth = trex.depth+1;
+    
+    //Coloque o nome do grupo que contém as nuvens
+    ???.add(cloud);
+  }
+  
+}
+
+function spawnObstacles() {
+  if(frameCount % 60 === 0) {
+    var obstacle = createSprite(600,height-95,20,30);
+    obstacle.setCollider('circle',0,0,45)
+  //Defina a velocidade do obstáculo no eixo X
+    ??? = -(6 + 3*score/100);
+    
+    
+    var rand = Math.round(random(1,2));
+    switch(rand) {
+      case 1: obstacle.addImage(???);
+              break;
+      case 2: obstacle.addImage(???);
+              break;
+      default: break;
+    }
+    
+   
+    /* Defina o seguinte: 
+    tamaho do obstáculo para 0.3
+    tempo de vida para 300
+    ???*/
+    obstacle.depth = trex.depth;
+    trex.depth +=1;
+    
+    obstaclesGroup.add(obstacle);
+  }
+}
   
   drawSprites();
 }
